@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Squiggly Note Monitor</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar"><div><p class="eyebrow">AUTOMATED QUALITY MONITOR</p><h1>Squiggly Note</h1></div><span class="pulse"><i></i> Monitoring every 2 hours</span></header>
+  <main>
+    <section class="hero"><div><p class="eyebrow">LATEST RUN</p><h2>Everything in one calm place.</h2><p class="muted">A timestamped view of uptime, feature coverage, regressions, and evidence.</p></div><div class="hero-time">Last checked<br><strong id="lastChecked">2026-08-16 · 09:00 PT</strong></div></section>
+    <section class="stats"><article><span>Uptime</span><strong class="green">100%</strong><small>Last 24 hours</small></article><article><span>Tests passed</span><strong>24 / 28</strong><small>85.7% coverage</small></article><article><span>Needs attention</span><strong class="amber">2</strong><small>2 blocked by credentials</small></article><article><span>Last duration</span><strong>01:42</strong><small>Automated run</small></article></section>
+    <section class="toolbar"><div><h3>Feature checks</h3><p class="muted">Each result is independently timestamped.</p></div><div class="filters"><button class="active" data-filter="all">All</button><button data-filter="PASS">Passed</button><button data-filter="FAIL">Failed</button><button data-filter="BLOCKED">Blocked</button></div></section>
+    <section id="checks" class="checks"></section>
+    <section class="report"><div><h3>Recipients</h3><p class="muted">Reports are sent after every completed run.</p></div><div class="recipients"><span>atreya.a.p@gmail.com</span><span>team@example.com</span><button aria-label="Add recipient">+</button></div></section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
