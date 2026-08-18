@@ -4,13 +4,14 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Squiggly Note Public Tickets</title>
 <style>
-body{font:16px system-ui;max-width:760px;margin:60px auto;padding:0 20px;color:#17231f;background:#f5f7f3}main{background:#fff;padding:28px;border:1px solid #dfe6df;border-radius:16px}a{display:inline-block;padding:10px 14px;border-radius:8px;text-decoration:none;border:1px solid #dfe6df;background:#fff;color:#17231f;margin:5px 5px 5px 0}.primary{background:#1c3026;color:#fff}p{color:#708078;line-height:1.5}
+body{font:16px system-ui;max-width:760px;margin:60px auto;padding:0 20px;color:#17231f;background:#f5f7f3}main{background:#fff;padding:28px;border:1px solid #dfe6df;border-radius:16px}a,button{display:inline-block;padding:10px 14px;border-radius:8px;text-decoration:none;border:1px solid #dfe6df;background:#fff;color:#17231f;margin:5px 5px 5px 0;cursor:pointer}.primary{background:#1c3026;color:#fff}p{color:#708078;line-height:1.5}label{display:block;margin-top:15px;font-weight:650}input,textarea{width:100%;padding:10px;margin-top:6px;border:1px solid #dfe6df;border-radius:8px;font:inherit}textarea{min-height:130px;resize:vertical}.note{font-size:13px;background:#f0f4f0;padding:12px;border-radius:8px}
 </style>
 <main>
 <p>PUBLIC SUPPORT</p>
 <h1>Squiggly Note tickets</h1>
 <p>Tickets are stored publicly as GitHub Issues so everyone can view updates and mark issues resolved. Private Gmail recipients are never displayed here.</p>
-<a class="primary" href="https://github.com/atreyap31-cell/Squigglynote-tester/issues/new" target="_blank" rel="noopener">Submit a ticket</a>
+<form id="ticketForm"><label for="ticketTitle">Problem title</label><input id="ticketTitle" required maxlength="120" placeholder="What went wrong?"><label for="ticketBody">Describe the problem</label><textarea id="ticketBody" required placeholder="Include steps to reproduce and what you expected. Do not include passwords or API keys."></textarea><button class="primary" type="submit">Submit public ticket</button></form>
 <a href="https://github.com/atreyap31-cell/Squigglynote-tester/issues" target="_blank" rel="noopener">View all public tickets</a>
-<p>Do not include passwords, API keys, or personal information in a ticket.</p>
+<p class="note">Submitting opens GitHub with your ticket pre-filled. You review and click the final “Submit new issue” button there. Do not include passwords, API keys, or personal information.</p>
 </main>
+<script>document.querySelector('#ticketForm').onsubmit=e=>{e.preventDefault();const title=document.querySelector('#ticketTitle').value.trim(),body=document.querySelector('#ticketBody').value.trim();const url='https://github.com/atreyap31-cell/Squigglynote-tester/issues/new?title='+encodeURIComponent(title)+'&body='+encodeURIComponent(body);window.open(url,'_blank','noopener');};</script>
