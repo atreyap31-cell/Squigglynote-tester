@@ -1,6 +1,6 @@
 // Squiggly Note monitor. Test runs, tickets and recipients all live on the Squiggly
 // server (the same one the note app uses), reached through its ngrok tunnel.
-const DEFAULT_API = 'https://absolve-marigold-procedure.ngrok-free.dev';
+const DEFAULT_API = 'https://football-wielder-skipping.ngrok-free.dev';
 const params = new URLSearchParams(location.search);
 if (params.get('api')) localStorage.setItem('sqApi', params.get('api'));
 let API = (localStorage.getItem('sqApi') || DEFAULT_API).replace(/\/+$/, '');
